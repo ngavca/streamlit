@@ -88,7 +88,7 @@ def statistics():
 def main():
     data = read_data("skyscrapers.csv")
     st.title("Skyscrapers Web Application")
-    st.write("Welcome! This project analyses the dataset containing the majority of the tallest skyscrapers around the world. The Project includes a dataframe with all the values as well as a scatterplot, bargraph, and some statsitics regaring the dataset")
+    st.write("Welcome! This project analyses the dataset containing the majority of the tallest skyscrapers around the world. The Project includes a dataframe with all the values as well as a scatterplot, bargraph, and some statsitics regarding the dataset")
     st.sidebar.title("Sidebar")
     df = pd.DataFrame(data, columns=["Name", "Country", "Height", "City", "Lat", "Lon"])
     st.dataframe(df)
