@@ -105,7 +105,7 @@ def main():
     # we will read in the data and display it in our streamLit app using the streamLit module
     data = read_data("skyscrapers.csv")
     st.title("Skyscrapers Web Application")
-    st.write("Welcome!, This project analyses a dataset containing the tallest skyscrapers around the world")
+    st.write("Welcome! This project analyses a dataset containing the tallest skyscrapers around the world")
     st.sidebar.title("Sidebar")
     df = pd.DataFrame(data, columns=["Name", "Country", "Height", "City", "Lat", "Lon"])
     st.dataframe(df)
