@@ -1,6 +1,6 @@
 """
 Name: Nick Gavca
-CS 230: Section SN1
+MA346: Section 3
 Data Set: Skyscrapers around the World
 URL:
 
@@ -88,7 +88,7 @@ def statistics():
 def main():
     data = read_data("skyscrapers.csv")
     st.title("Skyscrapers Web Application")
-    st.write("Welcome!")
+    st.write("Welcome! This project analyses the dataset containing the majority of the tallest skyscrapers around the world. The Project includes a dataframe with all the values as well as a scatterplot, bargraph, and some statsitics regaring the dataset")
     st.sidebar.title("Sidebar")
     df = pd.DataFrame(data, columns=["Name", "Country", "Height", "City", "Lat", "Lon"])
     st.dataframe(df)
@@ -111,7 +111,7 @@ def main():
 
     # user selects which countries he/she wants to display in the bar chart
     countries = st.sidebar.multiselect("Select Countries to Display", countries_list(data))
-    heightLimit = st.sidebar.slider("Set The Height Limit for Skyscrapers", 50, 1000)
+    heightLimit = st.sidebar.slider("Set The Height Limit for Skyscrapers", 350, 1000)
     if len(countries) > 0:
         st.subheader("Bar Chart")
         st.pyplot(bar_chart(freq_data(data, countries, heightLimit)))
