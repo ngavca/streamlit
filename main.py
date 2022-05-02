@@ -112,7 +112,7 @@ def main():
     st.subheader("Scatter Plot")
     st.pyplot(scatter_plot())
     scatter_data = pd.read_csv("skyscrapers.csv")
-    stats = st.sidebar.radio("Select statistics that you would like to display? P.S China and U.S has the most skyscrapers.",
+    stats = st.sidebar.radio("Select statistics that you would like to display?",
                              ("R-value", "Average Height", "Min Height", "Max Height", "Standard Deviation"))
     # displaying the statistic that the user chose
     if stats == "R-value":
@@ -127,7 +127,7 @@ def main():
         st.write("The standard deviation for all skyscrapers is:", round(np.std(scatter_data["Metres"]), 2), "meters")
 
     # user selects which countries he/she wants to display in the bar chart
-    countries = st.sidebar.multiselect("Select Countries to Display", countries_list(data))
+    countries = st.sidebar.multiselect("Select Countries to Display. P.S China and U.S has the most skyscrapers.", countries_list(data))
     heightLimit = st.sidebar.slider("Set The Height Limit for Skyscrapers", 350, 830)
     if len(countries) > 0:
         st.subheader("Bar Chart")
